@@ -1,0 +1,172 @@
+﻿<Window x:Class="EP2ATIS.vistas.Registro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EP2ATIS.vistas"
+        mc:Ignorable="d"
+        Title="Registro" Height="700" Width="1000"
+        Background="#2A3950"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <StackPanel VerticalAlignment="Top" 
+                        Margin="75" >
+
+            <StackPanel Orientation="Horizontal" 
+                        VerticalAlignment="Center">
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Nombres:</Label>
+                <TextBox Name="txtNombres" 
+                         Margin="0,15,10,15" 
+                         FontSize="14"
+                         Width="310px"/>
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Apellidos:</Label>
+                <TextBox Name="txtApellidos" 
+                         Margin="0,15,10,15" 
+                         FontSize="14"
+                         Width="310px"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" 
+                        VerticalAlignment="Center">
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Genero:</Label>
+                <ComboBox x:Name="cmbGenero" 
+                                  Margin="0,15,10,15"
+                                  Width="310px"
+                                  FontSize="14px">
+                    <ComboBoxItem>Masculino</ComboBoxItem>
+                    <ComboBoxItem>Femenino</ComboBoxItem>
+                </ComboBox>
+                
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Nacimiento:</Label>
+                <DatePicker x:Name="dpNacimiento" 
+                            Margin="0,15,10,15"
+                            Width="310px"
+                            FontSize="14px"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" 
+                        VerticalAlignment="Center">
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Direccion:</Label>
+                <TextBox Name="txtDireccion" 
+                         Margin="0,15,10,15" 
+                         FontSize="14"
+                         Width="310px"/>
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Telefono:</Label>
+                <TextBox Name="txtTelefono" 
+                         Margin="0,15,10,15" 
+                         FontSize="14"
+                         Width="310px"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" 
+                        VerticalAlignment="Center">
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">DUI:</Label>
+                <TextBox Name="txtDUI" 
+                         Margin="0,15,10,15" 
+                         FontSize="14"
+                         Width="310px"/>
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Tipo Sangre:</Label>
+                <ComboBox x:Name="cmbTipoSangre" 
+                                  Margin="0,15,10,15"
+                                  Width="310px"
+                                  FontSize="14px">
+                    <ComboBoxItem>Tipo A</ComboBoxItem>
+                    <ComboBoxItem>Tipo B</ComboBoxItem>
+                    <ComboBoxItem>Tipo AB</ComboBoxItem>
+                    <ComboBoxItem>Tipo O</ComboBoxItem>
+                    <ComboBoxItem>Tipo Rh+</ComboBoxItem>
+                    <ComboBoxItem>Tipo Rh-</ComboBoxItem>
+                </ComboBox>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" 
+                        VerticalAlignment="Center">
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Correo:</Label>
+                <TextBox Name="txtCorreo" 
+                         Margin="0,15,10,15" 
+                         FontSize="14"
+                         Width="310px"/>
+
+                <Label Foreground="White" 
+                       Width="100px"
+                       FontWeight="Bold"
+                       FontSize="14px">Contraseña:</Label>
+                <PasswordBox Name="txtClave"
+                             Margin="0,15,10,15" 
+                             FontSize="14"
+                             Width="310px"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" 
+                        VerticalAlignment="Center">
+
+                <Label Foreground="White" 
+                       Width="170px"
+                       FontWeight="Bold"
+                       FontSize="14px">Confirmar Contraseña:</Label>
+                <PasswordBox Name="txtConfirmar"
+                             Margin="0,15,10,15" 
+                             FontSize="18"
+                             Width="310px"/>
+
+            </StackPanel>
+
+            <Button Name="btnRegistro" 
+                    Width="120" 
+                    Content="Registrarse"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    Background="#117864"
+                    FontSize="14px"
+                    Height="50"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Bottom"
+                    Margin="0, 10"
+                    Cursor="Hand" 
+                    Click="btnRegistro_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,169 @@
+﻿<Page x:Class="EP2ATIS.vistas.secretaria.GestionCitas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EP2ATIS.vistas.secretaria"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Background="#2A3950"
+      Title="GestionCitas"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <ScrollViewer>
+
+            <GroupBox 
+                Header="Citas"
+                Margin="30" 
+                Padding="20" 
+                Background="#2A3950" 
+                FontSize="14" 
+                FontWeight="Bold"
+                Foreground="White">
+
+                <StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center">
+
+                        <Label Foreground="White" Width="100px">Fecha:</Label>
+                        <DatePicker x:Name="dpFecha" 
+                                    Margin="5"
+                                    Width="550px" SelectedDateChanged="dpFecha_SelectedDateChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center">
+
+                        <Label Foreground="White" Width="100px">Doctor:</Label>
+                        <ComboBox x:Name="cmbDoctor" 
+                                  Margin="5"
+                                  Width="550px" SelectionChanged="cmbDoctor_SelectionChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center">
+                        <Label Foreground="White" Width="100px">Estado:</Label>
+                        <ComboBox x:Name="cmbEstado" 
+                                  Margin="5"
+                                  Width="550px" DropDownClosed="cmbEstado_DropDownClosed">
+                            <ComboBoxItem>No cancelada</ComboBoxItem>
+                            <ComboBoxItem>Cancelada</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center">
+
+                        <Label Foreground="White" Width="100px">Confirmada:</Label>
+                        <ComboBox x:Name="cmbConfirmada" 
+                                  Margin="5"
+                                  Width="550px">
+                            <ComboBoxItem>Confirmada</ComboBoxItem>
+                            <ComboBoxItem>No confirmada</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center">
+
+                        <Label Foreground="White" Width="100px">Horario:</Label>
+                        <ComboBox x:Name="cmbHorario" 
+                                  Margin="5" 
+                                  Width="550px"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center">
+
+                        <Label Foreground="White" Width="100px">Paciente:</Label>
+                        <ComboBox x:Name="cmbPaciente" 
+                                  Margin="5"
+                                  Width="550px"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" 
+                        Margin="5">
+
+                        <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Right">
+
+                            <TextBox x:Name="txtId" Visibility="Hidden"/>
+
+                            <Button x:Name="btnGuardar" 
+                                    Margin="10" 
+                                    Background="Transparent"
+                                    Height="40" 
+                                    BorderBrush="{x:Null}"
+                                    Click="btnGuardar_Click">
+
+                                <Image Source="../../Assets/img/guardar.png" />
+                            </Button>
+
+                            <Button x:Name="btnEditar" 
+                                    Margin="10"
+                                    Background="Transparent"
+                                    Height="40" 
+                                    BorderBrush="{x:Null}"
+                                    Click="btnEditar_Click">
+
+                                <Image Source="../../Assets/img/editar.png" />
+                            </Button>
+
+                            <Button x:Name="btnLimpiar" 
+                                    Margin="10" 
+                                    Background="Transparent"
+                                    Height="40" 
+                                    BorderBrush="{x:Null}"
+                                    Click="btnLimpiar_Click">
+
+                                <Image Source="../../Assets/img/limpiar.png" />
+                            </Button>
+
+                            <Button x:Name="btnEliminar" 
+                                    Margin="10" 
+                                    Background="Transparent"
+                                    Height="40"
+                                    BorderBrush="{x:Null}"
+                                    Click="btnEliminar_Click">
+
+                                <Image Source="../../Assets/img/eliminar.png" />
+                            </Button>
+
+                        </StackPanel>
+
+                        <DataGrid  x:Name="dgCitas" 
+                                   ItemsSource="{Binding}" 
+                                   AutoGenerateColumns="False" 
+                                   IsReadOnly="True">
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" 
+                                            Binding="{Binding IdCita}" />
+
+                                <DataGridTextColumn Header="Fecha" 
+                                            Binding="{Binding Fecha}"/>
+
+                                <DataGridTextColumn Header="Estado" 
+                                            Binding="{Binding Estado}"/>
+
+                                <DataGridTextColumn Header="Confirmada" 
+                                            Binding="{Binding Confirmada}"/>
+
+                                <DataGridTextColumn Header="Horario" 
+                                            Binding="{Binding Hora}"/>
+
+                                <DataGridTextColumn Header="Doctor" 
+                                            Binding="{Binding Doctor}"/>
+
+                                <DataGridTextColumn Header="Paciente" 
+                                            Binding="{Binding Paciente}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </ScrollViewer>
+    </Grid>
+</Page>

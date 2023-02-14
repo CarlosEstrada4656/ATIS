@@ -1,0 +1,38 @@
+﻿<Page x:Class="EP2ATIS.vistas.paciente.CancelarCita"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EP2ATIS.vistas.paciente"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CancelarCita">
+
+    <GroupBox
+        Header="Cancelar cita"
+                Margin="30" 
+                Padding="20" 
+                Background="#2A3950" 
+                FontSize="14" 
+                FontWeight="Bold"
+                Foreground="White">
+        <Grid>
+            <TextBox x:Name="txtPaciente" HorizontalAlignment="Left" Height="23" Margin="123,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Collapsed"/>
+            <DataGrid x:Name="dgCita" HorizontalAlignment="Left" Height="214" Margin="0,60,0,0" VerticalAlignment="Top" Width="688" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="dgCita_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding IdCita}" />
+                    <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" />
+                    <DataGridTextColumn Header="Hora" Binding="{Binding hora}" />
+                    <DataGridTextColumn Header="Doctor" Binding="{Binding nombreDoctor}" />
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btnCancelar" Content="Cancelar cita" HorizontalAlignment="Left" Margin="275,339,0,-59" VerticalAlignment="Top" Width="128" Click="btnCancelar_Click" Height="44"/>
+            <TextBox x:Name="txtCita" HorizontalAlignment="Left" Height="23" Margin="533,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Collapsed"/>
+            <Label x:Name="lblNombreP" Content="" HorizontalAlignment="Left" Margin="275,16,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
+
+        </Grid>
+    </GroupBox>
+
+</Page>

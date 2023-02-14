@@ -1,0 +1,33 @@
+﻿<Page x:Class="EP2ATIS.vistas.paciente.Recepcion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EP2ATIS.vistas.paciente"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Recepcion">
+    <GroupBox Header="Realizar cita"
+                Margin="30" 
+                Padding="20" 
+                Background="#2A3950" 
+                FontSize="14" 
+                FontWeight="Bold"
+                Foreground="White">
+
+        <Grid>
+            <Label Content="Fecha de la cita: " Foreground="White" HorizontalAlignment="Left" Margin="36,42,0,0" VerticalAlignment="Top"/>
+            <Label Content="Horario: " Foreground="White" HorizontalAlignment="Left" Margin="371,42,0,0" VerticalAlignment="Top"/>
+            <DatePicker x:Name="dpFecha" HorizontalAlignment="Left" Margin="159,44,0,0" VerticalAlignment="Top" SelectedDateChanged="dpFecha_SelectedDateChanged"/>
+            <ComboBox x:Name="cmbHorario" HorizontalAlignment="Left" Margin="444,46,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Doctor" Foreground="White" HorizontalAlignment="Left" Margin="36,124,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cmbDoctor" HorizontalAlignment="Left" Margin="96,124,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbDoctor_SelectionChanged"/>
+            <Button x:Name="btnAgregar" Content="Agendar cita" HorizontalAlignment="Left" Margin="254,269,0,0" VerticalAlignment="Top" Width="169" Click="btnAgregar_Click" Height="45"/>
+            <Label Content="Citas confirmadas para la fecha seleccionada:" Foreground="White" HorizontalAlignment="Left" Margin="36,191,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtCupo" HorizontalAlignment="Left" Height="29" Margin="349,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" IsReadOnly="True"/>
+            <Label x:Name="lblPaciente" Content="Label" HorizontalAlignment="Left" Margin="439,220,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+        </Grid>
+    </GroupBox>
+
+
+</Page>
